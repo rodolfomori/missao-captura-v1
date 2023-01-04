@@ -142,23 +142,34 @@
         <p>Rodolfo Mori | Copyright 2022</p>
     </footer>
 
-    <script> 
-        //<![CDATA[ 
-        function deferGoogleJS() { 
-        var d = document.createElement("script"); 
-        d.src = "https://www.googletagmanager.com/gtag/js?id=GTM-T9Z94N6", 
-        document.body.appendChild(d) 
-        } 
-        window.addEventListener ? window.addEventListener("load", deferGoogleJS, !1) : window.attachEvent ? window.attachEvent("onload", deferGoogleJS) : window.onload = deferGoogleJS; 
-        window.dataLayer = window.dataLayer || [];
-        
-        function gtag() { 
-        dataLayer.push(arguments); 
-        } 
-        gtag('js', new Date()); 
-        gtag('config', 'GTM-T9Z94N6'); 
-        //]]> 
-        </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            /** init gtm after 3500 seconds - this could be adjusted */
+            setTimeout(initGTM, 3500);
+        });
+        document.addEventListener('scroll', initGTMOnEvent);
+        document.addEventListener('mousemove', initGTMOnEvent);
+        document.addEventListener('touchstart', initGTMOnEvent);
+        function initGTMOnEvent(event) {
+            initGTM();
+            event.currentTarget.removeEventListener(event.type, initGTMOnEvent); // remove the event listener that got triggered
+        }
+        function initGTM() {
+            if (window.gtmDidInit) {
+                return false;
+            }
+            window.gtmDidInit = true; // flag to ensure script does not get added to DOM more than once.
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.async = true;
+            // ensure PageViews is always tracked (on script load)
+            script.onload = () => {
+                dataLayer.push({ event: 'gtm.js', 'gtm.start': new Date().getTime(), 'gtm.uniqueEventId': 0 });
+            };
+            script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-T9Z94N6';
+            document.head.appendChild(script);
+        }
+    </script>
 </body>
 
 </html>
