@@ -10,6 +10,7 @@
 html {
     width: 100vw;
 }
+
 /* PRIMEIRA PARTE */
 .main-inicial {
     background: linear-gradient(90deg, rgb(8, 13, 18) 0%, rgba(3, 13, 31, 1) 46%);
@@ -32,9 +33,8 @@ html {
 }
 
 .logo-missao-zero {
-    width: 230px;
-    height: 230px;
-    margin-left: -16px;
+    height: 80px;
+    margin: 50px 0 75px -16px;
 }
 
 .primeiro-texto-main-inicial {
@@ -81,13 +81,33 @@ input {
     background: #FFFFFF33;
     padding-left: 10px;
     margin-top: -25px;
-    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 100%;
+    font-size: 20px;
+}
+
+#_form_31_submit {
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#_form_31_submit b {
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 button {
     color: #000;
     cursor: pointer;
-    background-color: #cfff00;
+    background-color: #fb8000;
     transition: 1s;
 }
 
@@ -274,17 +294,20 @@ button:hover {
 @keyframes tamanho {
     0% {
         -webkit-transform: scale(1);
-      }
-      25% {
+    }
+
+    25% {
         -webkit-transform: scale(1.1);
-      }
-      50% {
+    }
+
+    50% {
         -webkit-transform: scale(1);
-      }
-      100% {
+    }
+
+    100% {
         -webkit-transform: scale(1);
-      }
-    
+    }
+
 }
 
 /* FIM SEGUNDA PARTE */
@@ -375,13 +398,10 @@ footer p {
 /* FIM FOOTER */
 /* INICIO ESTILOS INPUT / BOTÃO */
 #_form_31_ {
-    display: none;
     cursor: pointer;
     font-family: arial, sans-serif;
     font-size: 24px;
     font-weight: bold;
-    text-align: center;
-    background: #fb8000 !important;
     border: 0 !important;
     -moz-border-radius: 4px !important;
     -webkit-border-radius: 4px !important;
@@ -395,14 +415,113 @@ footer p {
     border: none !important;
 }
 
-._field11, ._field12, ._field13, ._field14, ._field10 {
+._field11,
+._field12,
+._field13,
+._field14,
+._field10 {
     display: none;
 }
 
-._marketing-by{
-    display: none;
-}
-
-#_form_63B58DB01B3B9_ ._form_element input[type="text"], #_form_63B58DB01B3B9_ ._form_element input[type="date"], #_form_63B58DB01B3B9_ ._form_element select, #_form_63B58DB01B3B9_ ._form_element textarea:not(.g-recaptcha-response) {
+#_form_63B58DB01B3B9_ ._form_element input[type="text"],
+#_form_63B58DB01B3B9_ ._form_element input[type="date"],
+#_form_63B58DB01B3B9_ ._form_element select,
+#_form_63B58DB01B3B9_ ._form_element textarea:not(.g-recaptcha-response) {
     margin-top: 20px;
+}
+
+#_form_31_ ._field-wrapper {
+    position: relative;
+}
+
+#_form_31_ input[type="text"]._has_error,
+#_form_31_ textarea._has_error {
+    border: #f37c7b 1px solid;
+}
+
+#_form_31_ input[type="checkbox"]._has_error {
+    outline: #f37c7b 1px solid;
+}
+
+#_form_31_ ._error {
+    display: block;
+    position: absolute;
+    font-size: 14px;
+    z-index: 10000001;
+}
+
+#_form_31_ ._error._above {
+    padding-bottom: 4px;
+    bottom: 52px;
+    right: 0;
+}
+
+#_form_31_ ._error._below {
+    padding-top: 4px;
+    top: 100%;
+    right: 0;
+}
+
+#_form_31_ ._error._above ._error-arrow {
+    bottom: 0;
+    right: 15px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #f37c7b;
+}
+
+#_form_31_ ._error._below ._error-arrow {
+    top: 0;
+    right: 15px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #f37c7b;
+}
+
+#_form_31_ ._error-inner {
+    padding: 8px 12px;
+    background-color: #f37c7b;
+    font-size: 14px;
+    font-family: arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+#_form_31_ ._error-inner._form_error {
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+#_form_31_ ._button-wrapper ._error-inner._form_error {
+    position: static;
+}
+
+#_form_31_ ._error-inner._no_arrow {
+    margin-bottom: 10px;
+}
+
+#_form_31_ ._error-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+#_form_31_ ._error-html {
+    margin-bottom: 10px;
+}
+
+#_form_31_ .phone-error-hidden {
+    display: none;
+}
+
+#_form_31_ .phone-error {
+    color: #e40e49;
+}
+
+#_form_31_ .phone-input-error {
+    border: 1px solid #e40e49 !important;
 }
